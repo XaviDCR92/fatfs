@@ -26,7 +26,11 @@
 extern "C" {
 #endif
 
+#ifndef FF_CONF_PATH
 #include "ffconf.h"		/* FatFs configuration options */
+#else
+#include FF_CONF_PATH
+#endif
 
 #if FF_DEFINED != FFCONF_DEF
 #error Wrong configuration file (ffconf.h).
